@@ -15,7 +15,6 @@ public final class QueueImpl<T> implements Queue<T>{
 		this.size = size;
 		T[] data = (T[]) new Object[size];
 		queue = data;	
-		//System.out.println(queue.length);
 	}
 	
 	//This constructor only used when dequeue() called
@@ -45,8 +44,8 @@ public final class QueueImpl<T> implements Queue<T>{
 	@Override
 	public Queue<T> deQueue() {
 		//Create new queue with 1 less size of current value and contains rear value
-        Queue<T> result = new QueueImpl(size-1, rear, queue);
-        return result;
+		Queue<T> result = new QueueImpl(size-1, rear, queue);
+		return result;
 	}
 
 	@Override

@@ -12,18 +12,18 @@ public class QueueTest {
 	Queue<String> a = new QueueImpl<String>(4);
 	
 	@Test
-    public void testImmutable() {
-       a.enQueue("1");
-       a.enQueue("2");
-       a.enQueue("3");
-       assertEquals("1", a.head());
-       
-       //Removes the element at the beginning of the immutable queue, and returns the new queue.
-       Queue<String> b = a.deQueue();
-       assertEquals("2", b.head());
-       //Even queue a dequeued a does not change
-       assertEquals("1", a.head());
-    }
+	public void testImmutable() {
+		a.enQueue("1");
+		a.enQueue("2");
+		a.enQueue("3");
+		assertEquals("1", a.head());
+		
+		//Removes the element at the beginning of the immutable queue, and returns the new queue.
+		Queue<String> b = a.deQueue();
+		assertEquals("2", b.head());
+		//Even queue a dequeued a does not change
+		assertEquals("1", a.head());
+	}
 	
 	//Queue can not enque more than its size
 	@Test(expected = IllegalArgumentException.class)
@@ -37,9 +37,9 @@ public class QueueTest {
 	
 	//No enque therefore no element on head
 	@Test(expected = NoSuchElementException.class)
-    public void testHead() {
-        a.head();
-    }
+	public void testHead() {
+		a.head();
+	}
 	
 	//Queue size can not be less than 0
 	@Test(expected = IllegalArgumentException.class)
@@ -48,6 +48,5 @@ public class QueueTest {
 		Queue<String> c = b.deQueue();
 		Queue<String> d = c.deQueue();
 		Queue<String> e = d.deQueue();
-    }
-	
+	}
 }
